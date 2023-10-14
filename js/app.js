@@ -79,43 +79,83 @@ console.log('PARI E DISPARI')
 //     console.log(`User hai perso!!`);
 // }
 
-function isPcNumber (pcNumber) {
-    // Blocco di codice
-   return pcNumber;
-}
+// function isPcNumber (pcNumber) {
+//     // Blocco di codice
+//    return pcNumber;
+// }
 
-function isSumOfNumbers (sum) {
-    
-    return sum
-}
+// function isSumOfNumbersEven (somma) {
+//     // Blocco di codice
+// if (somma === 0) {
+//     return true
+// } else {
+//     return false
+// }
+// }
 
 
-const pcNumber = parseInt(Math.random() * 5 + 1);
-console.log(pcNumber, 'PC-NUMBER');
+// const pcNumber = parseInt(Math.random() * 5 + 1);
+// console.log(pcNumber, 'PC-NUMBER');
 
-const userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
-// console.log(userNumber, 'USER-NUMBER');
+// const userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
+// // console.log(userNumber, 'USER-NUMBER');
 
-if (userNumber % 2 === 0) {
-  console.log(userNumber, 'User hai scelto Pari');
+// if (userNumber % 2 === 0) {
+//   console.log(userNumber, 'User hai scelto Pari');
+// } else {
+//   console.log(userNumber, 'User hai scelto Dispari');
+// }
+
+// const sum =  userNumber + pcNumber;
+
+// if (sum % 2 === 0 ) {
+//     console.log(sum, 'La somma è pari');
+// } else {
+//     console.log(sum, 'La somma è dispari');
+// }
+
+// if (isSumOfNumbersEven(sum)) {
+//     console.log(`User hai vinto!!`);
+// } else {
+//     console.log(`User hai perso!!`);
+// }
+
+let value = 'pari';
+
+let userNumber = getRandomIntInclusive(1, 5);
+let pcNumber = getRandomIntInclusive(1, 5);
+
+let sum = userNumber + pcNumber;
+console.log(userNumber, pcNumber, sum, value);
+
+if ( isEvenNumber(sum) && value === 'pari') {
+    console.log('User hai vinto!!');
+} else if ( isOddNumber(sum) && value === 'dispari') {
+    console.log('User hai vinto!!');
 } else {
-  console.log(userNumber, 'User hai scelto Dispari');
+    console.log('User hai perso!!')
 }
 
-const sum =  userNumber + pcNumber;
-
-if (sum % 2 === 0 ) {
-    console.log(sum, 'La somma è pari');
-} else {
-    console.log(sum, 'La somma è dispari');
+function isEvenNumber(number) {
+    if (number % 2 === 0) {
+        return true
+    } else {
+        return false
+    }
 }
 
-if (isSumOfNumbers(sum)) {
-    console.log(`User hai vinto!!`);
-} else {
-    console.log(`User hai perso!!`);
+function isOddNumber (number) {
+    if (number % 2 !== 0) {
+        return true
+    } else {
+        return false
+    }
 }
 
-
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); 
+  }
 
 
